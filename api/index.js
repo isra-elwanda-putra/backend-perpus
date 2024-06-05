@@ -29,3 +29,5 @@ require("./routes/book.routes")(app);
 require("./routes/contact.routes")(app);
 
 app.listen(config.port, () => console.log(`Server run on port ${config.port}`))
+
+module.exports = app;
