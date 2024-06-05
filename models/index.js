@@ -1,9 +1,6 @@
-const dbConfig = require("../config/database");
 const mongoose = require('mongoose');
-
 module.exports = {
-    mongoose,
-    url: dbConfig.url,
-    booksModel: require('./books.model')(mongoose),
-    borrowModel: require('./borrow.model')(mongoose)
+    BookModel: require('./book.model')(mongoose),
+    BorrowModel: require('./borrow.model')(mongoose),
+    ContactModel: require('./contact.model')(mongoose)
 }

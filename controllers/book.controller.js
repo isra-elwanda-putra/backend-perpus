@@ -1,5 +1,5 @@
-const db = require("../models");
-const booksModel = db.booksModel;
+const model = require("../models");
+const booksModel = model.BookModel;
 
 exports.findSearch = async (req, res) => {
     const books = await booksModel.find({

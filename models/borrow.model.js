@@ -17,5 +17,5 @@ module.exports = mongoose => {
         }
     });
 
-    return mongoose.model('borrow', borrowSchema);
+    return mongoose.model('borrows', borrowSchema);
 }

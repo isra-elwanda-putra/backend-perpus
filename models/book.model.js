@@ -1,10 +1,10 @@
 module.exports = mongoose => {
+    const AutoIncrement = require('mongoose-sequence')(mongoose);
     const { Schema } = mongoose;
-    const booksSchema = new Schema({
+    const bookSchema = new Schema({
         id: {
             type: Number,
             unique: true,
-            required: true
         },
         judulBuku: {
             type: String,
@@ -15,7 +15,10 @@ module.exports = mongoose => {
         image: {
             type: String,
         },
+    }, {
+        timestamps: false,
+        versionKey: false
     });
-
-    return mongoose.model('books', booksSchema);
+    bookSchema.plugin(AutoIncrement, { id: 'book_seq', inc_field: 'id' });
+    return mongoose.model('books', bookSchema);
 }
